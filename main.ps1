@@ -1,44 +1,14 @@
-# $Read_Ini #raw text from ini file
-# $Read_ini = Get-Content folder_ini.ini
-# $Read_Ini
 
-<#
-function Get-IniContent ($filePath)
-{
-    $ini = @{}
-    switch -regex -file $filePath
-    {
-        "^\[(.+)\]" # Section
-        {
-            $section = $matches[1]
-            $ini[$section] = @{}
-            $CommentCount = 0
-        }
-        "^(;.*)$" # Comment
-        {
-            $value = $matches[1]
-            $CommentCount = $CommentCount + 1
-            $name = "Comment" + $CommentCount
-            $ini[$section][$name] = $value
-        }
-        "(.+?)\s*=(.*)" # Key
-        {
-            $name,$value = $matches[1..2]
-            $ini[$section][$name] = $value
-        }
-    }
-    return $ini
-}
-Get-IniContent ".\folder_ini.ini"
-#>
 $ini = Get-Content -Path .\folder_ini.ini 
-#$ini
+
 $section = "none" #section name in ini file
-$projectName = "no projectname"
-$ProjectNumber = "no projectnumber"
+$projectName = "no project name"
+$ProjectNumber = "no project number"
+$ProjectCode = "no project code"
 $Author = "no author"
 $Manager = "no manager"
 $Company = "no company"
+
 $Site = @()
 $Document = @()
 $iniHash = @{}
@@ -59,6 +29,7 @@ foreach ($line in $ini)
                     $SpliteArray = $Line.Split("=")
                     if ($SpliteArray[0].trim('') -eq "ProjectName") {$projectName = $SpliteArray[1].trim('')}
                     if ($SpliteArray[0].trim('') -eq "ProjectNumber") {$ProjectNumber = $SpliteArray[1].trim('')}
+                    if ($SpliteArray[0].trim('') -eq "ProjectCode") {$ProjectCode = $SpliteArray[1].trim('')}
                     if ($SpliteArray[0].trim('') -eq "Author") {$Author = $SpliteArray[1].trim('')}
                     if ($SpliteArray[0].trim('') -eq "Manager") {$Manager = $SpliteArray[1].trim('')}
                     if ($SpliteArray[0].trim('') -eq "Company") {$Company = $SpliteArray[1].trim('')}
@@ -78,12 +49,14 @@ foreach ($line in $ini)
             }
 
     }
+
+#Debug info
     "Project Name is $projectName"
-    "Project Number is $ProjectNumber"
+    "Project Code is $ProjectCode"
+    "Project Number is $ProjectNumber"    
     "Project Author is $Author"
     "Project Manager is $Manager"
     "Project Company is $Company"
-$site
-$Document
-
-  #  $iniTemp
+    $site
+    $Document
+#>
