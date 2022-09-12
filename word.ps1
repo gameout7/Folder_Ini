@@ -10,11 +10,11 @@ $WordDocument.PageSetup.Orientation = 1
 
 #Header
 $Header = $WordSection.Headers.Item(1)
-$Header.range.text = "header text"
+$Header.range.text = $projectCompany
 
 #Footer
 $Footer = $WordSection.footers.item(1)
-$Footer.range.text = "footer text"
+$Footer.range.text = Get-Date -UFormat "%d/%m/%Y"
 
 #Title
 $Selection.ParagraphFormat.Alignment = 1
@@ -27,13 +27,13 @@ $Selection.TypeParagraph()
 $Selection.ParagraphFormat.Alignment = 0
 $Selection.Font.Bold = 0
 $Selection.Font.Size = 11
-$Selection.TypeText("Project Name: STC")
+$Selection.TypeText("Project Name: $projectName")
 $Selection.TypeParagraph()
-$Selection.TypeText("Project Code: 123")
+$Selection.TypeText("Project Code: $ProjectCode")
 $Selection.TypeParagraph()
-$Selection.TypeText("Project Manager: Name")
+$Selection.TypeText("Project Manager: $projectManager")
 $Selection.TypeParagraph()
-$Selection.TypeText("Project Manager: Name")
+$Selection.TypeText("Project Engineer: $projectEngineer")
 
 #Table name Design Documentation
 $Selection.TypeParagraph()
@@ -49,7 +49,7 @@ $Selection.Font.Size = 11
 $Selection.ParagraphFormat.Alignment = 1
 # $selection.Shading.BackgroundPatternColorIndex = 16
 
-$table = $Selection.tables.add($selection.range,2,5) #Change number of Rows
+$table = $Selection.tables.add($selection.range,$($DocumentQty + 1),5) #Change number of Rows
 $table.Borders.InsideLineStyle = 1
 $table.Borders.OutsideLineStyle = 1
 
@@ -61,10 +61,19 @@ $table.cell(1,2).range.text = "Document name"
 $table.cell(1,3).range.text = "Date"
 $table.cell(1,4).range.text = "Creator"
 $table.cell(1,5).range.text = "Note"
-#Other Rows
 
-$table.cell(2,1).range.text = "1 Doc No"
-$table.cell(2,2).range.text = "1 Document name"
-$table.cell(3,3).range.text = "1 Date"
-$table.cell(4,4).range.text = "1 Creator"
-$table.cell(5,5).range.text = "1 Note"
+#Other Rows
+$row = 2  
+foreach($item in $ProjectItems){
+$table.cell($row,1).range.text = $item.ItemNumber
+$table.cell($row,2).range.text = $item.ItemFileName
+$table.cell($row,3).range.text = Get-Date -UFormat "%d/%m/%Y" 
+$table.cell($row,4).range.text = $projectEngineer
+$table.cell($row,5).range.text = "Document template was created automaticaly"
+$row++
+}
+[string]$ListDocName = (get-location).path + "\" + $projectNumber + "-List-Doc"
+
+$WordDocument.saveas($ListDocName)
+$WordDocument.Close()
+$word.Application.quit()

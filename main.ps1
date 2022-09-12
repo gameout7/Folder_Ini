@@ -15,7 +15,7 @@ $ProjectDocuments = @() # list of hash tables of Project Documents Properties
 #$ProjectDocuments = @( @{ DocumentName = ; DocumentQt = ; DocumentPath = } )
 
 $ProjectItems = @() # list of hash tables of Project items
-#ProjectItems =  @( @{ ItemNumber = ; ItemTitle = ; ItemSite = ; ItemFileName =  })
+#ProjectItems =  @( @{ ItemNumber = ; ItemTitle = ; ItemSite = ; ItemFileName =  ;ItemPath})
 
 #Ini File parser
 foreach ($line in $ini)
@@ -82,7 +82,9 @@ foreach ($Doc in $ProjectDocuments)
 
             [string]$tempFileName = $projectName.Replace(' ', '_') + '_' + $Doc.DocumentName.Replace(' ', '_') + '_' + $tempNumber
 
-            $ProjectItems += @{ItemNumber = $tempNumber; ItemTitle = $Doc.DocumentName; ItemSite = "General"; ItemFileName = $tempFileName}
+            [string]$tempItemPath = $Doc.DocumentPath + '/' + $tempFileName
+
+            $ProjectItems += @{ItemNumber = $tempNumber; ItemTitle = $Doc.DocumentName; ItemSite = "General"; ItemFileName = $tempFileName; ItemPath = $tempItemPath}
             $ItemSmallNumber++
         }
         if ($Doc.DocumentQt -like "multi")
@@ -95,7 +97,9 @@ foreach ($Doc in $ProjectDocuments)
                 
                 [string]$tempFileName = $Site.Replace(' ', '_') + '_' + $Doc.DocumentName.Replace(' ', '_') + '_' + $tempNumber
                 
-                $ProjectItems += @{ItemNumber = $tempNumber; ItemTitle = $Doc.DocumentName; ItemSite = $site; ItemFileName = $tempFileName}
+                [string]$tempItemPath = $Doc.DocumentPath + '/' +$tempFileName
+
+                $ProjectItems += @{ItemNumber = $tempNumber; ItemTitle = $Doc.DocumentName; ItemSite = $site; ItemFileName = $tempFileName; ItemPath = $tempItemPath}
                 $ItemSmallNumber++
             }
 
