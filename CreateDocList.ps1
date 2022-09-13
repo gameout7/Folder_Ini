@@ -72,7 +72,7 @@ $table.cell($row,4).range.text = $projectEngineer
 $table.cell($row,5).range.text = "Document template was created automaticaly"
 $row++
 }
-[string]$ListDocName = (get-location).path + "\" + $projectNumber + "-List-Doc"
+[string]$ListDocName = $ProjectPath + "\" + $projectNumber + "-List-Doc"
 
 $WordDocument.saveas($ListDocName)
 $WordDocument.Close()
