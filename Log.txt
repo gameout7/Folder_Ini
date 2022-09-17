@@ -1,0 +1,3 @@
+Bugs: 
+1. Copy Docs will not work with single item in ProjectItems. Array of Hashtable become just Hushtable
+
