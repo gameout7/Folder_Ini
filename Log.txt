@@ -1,3 +1,14 @@
 Bugs: 
 1. Copy Docs will not work with single item in ProjectItems. Array of Hashtable become just Hushtable
 
+2. None file type is parsed wrong as visio
+
+
+TODO
+1. Combine all scripts -DONE
+2. Make function -DONE
+3. Ask user about next action -DONE
+4. Add try and error actions
+5. Add Continue to cycles
+6. Change all echo to write-host -DONE
+7. Script should take ItemType from Template type, not from separate value
