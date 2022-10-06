@@ -1,3 +1,5 @@
+Start-Transcript -Path log.log -IncludeInvocationHeader
+
 ######    FUNCTIONS    #########################################
 function read-ProjectData
 {
@@ -34,6 +36,7 @@ foreach ($line in $ini)
         }
     }
 #Debug info
+Write-Host "Project data" -BackgroundColor Green
 Write-Host "Project Name is $($ProjectData.projectName)"
 Write-Host "Project Code is $($ProjectData.ProjectCode)"
 Write-Host "Project Number is $($ProjectData.ProjectNumber)"    
@@ -41,6 +44,7 @@ Write-Host "Project Engineer is $($ProjectData.ProjectEngineer)"
 Write-Host "Project Manager is $($ProjectData.projectManager)"
 Write-Host "Project Company is $($ProjectData.projectCompany)"
 Write-Host "Project Country is $($ProjectData.projectCountry)"
+Write-Host "`n"
 #RETURN        
 $ProjectData
 }
@@ -74,17 +78,18 @@ function read-ProjectSites
                 }
         }
 #Debug info
-
+    Write-Host "Project sites" -BackgroundColor Green
     for ($i = 0; $i -lt $projectSites.Length; $i++) {Write-Host "Project Site $($i + 1) is $($ProjectSites[$i])"} 
     Write-Host "Number of Sites is $($projectSites.Count)"
+    Write-Host "`n"
     # Calculation Qty of Items
-    $DocumentQty = 0
-    foreach ($Doc in $ProjectDocuments)
-        { 
-            if ($Doc.DocumentQt -like "single") { $DocumentQty += 1 }
-            if ($Doc.DocumentQt -like "multi") { $DocumentQty += $($ProjectSites.Count) }
-        }
-    Write-Host "Number of Documents is $DocumentQty"
+#    $DocumentQty = 0
+#    foreach ($Doc in $ProjectDocuments)
+#        { 
+#            if ($Doc.DocumentQt -like "single") { $DocumentQty += 1 }
+#            if ($Doc.DocumentQt -like "multi") { $DocumentQty += $($ProjectSites.Count) }
+#        }
+#    Write-Host "Number of Documents is $DocumentQty"
 
 #RETURN        
     $projectSites
@@ -149,7 +154,7 @@ function New-ItemList
 #            [string]$tempItemType = $Doc.DocumentType
 
             if ($Doc.DocumentType -eq "visio") {[string]$tempItemPath = $Doc.DocumentPath + '\' + $tempFileName + '.vsdx'}
-            if ($Doc.DocumentTypee -eq "word") {[string]$tempItemPath = $Doc.DocumentPath + '\' + $tempFileName + '.docx'}
+            if ($Doc.DocumentType -eq "word") {[string]$tempItemPath = $Doc.DocumentPath + '\' + $tempFileName + '.docx'}
             if ($Doc.DocumentType -eq "excel") {[string]$tempItemPath = $Doc.DocumentPath + '\' + $tempFileName + '.xlsx'}
             if ($Doc.DocumentType -eq "none") {[string]$tempItemPath = $Doc.DocumentPath + '\' + $tempFileName + '.vsdx'}
 
@@ -180,15 +185,16 @@ function New-ItemList
             
         }
     #Debug info
-    Write-Host "Project Items"    
+    Write-Host "Project Items" -BackgroundColor Green
+    write-host "`n"   
     foreach ($item in $ProjectItems) 
         {   
-            write-host $item.ItemNumber
-            write-host $item.ItemTitle
+            write-host $item.ItemNumber -BackgroundColor Green
+            write-host $item.ItemTitle 
             write-host $item.ItemSite
             write-host $item.ItemFileName
             write-host $item.ItemPath
-            write-host $item.ItemType
+            write-host $item.ItemType $item.ItemTemplate
             write-host $item.ItemTemplate
             write-host "`n"   
         }
@@ -205,7 +211,7 @@ function new-foldersctrucure
     $folderStructure = Get-Content -path $FolderStructurePath
     [string]$ProjectPath = (get-location).path + "\" + $ProjectData.ProjectCountry + "_" + $($ProjectData.ProjectName.Replace(' ','_'))
     If (Test-Path -Path $ProjectPath) {Remove-Item -Path $ProjectPath -Force -Recurse}
-    Write-host 'Folder Structer:'
+    Write-host 'Folder Structer:' -BackgroundColor Green
     foreach ($line in $folderStructure)
         {
     #        if ($line -ne "" -and $line.startswith(";") -ne $true)
@@ -300,7 +306,8 @@ function New-DocList {
     [string]$ListDocName = $ProjectPath + "\" + $ProjectData.projectNumber + "-List-Doc"
     
     $WordDocument.saveas($ListDocName)
-    Write-Host $ListDocName
+    Write-Host "List-Doc located in $ListDocName" -BackgroundColor Green
+    Write-host "`n"
     $WordDocument.Close()
     $word.Application.quit()
     
@@ -435,16 +442,35 @@ function Copy-Docs {
 $ProjectIniFilePath = ".\Project_ini.ini"
 $ProjectData = read-projectdata $ProjectIniFilePath
 $Confirm = Read-Host "Please check Project Data and Confirm Y/N"
-if ($Confirm -ne "y") {Exit}
+if ($Confirm -ne "y")
+    {
+        Stop-Transcript
+        Exit
+    }
 $ProjectSites = read-projectsites $ProjectIniFilePath
 $Confirm = Read-Host "Please check Project Sites and Confirm Y/N"
-if ($Confirm -ne "y") {Exit}
+if ($Confirm -ne "y")
+    {
+        Stop-Transcript
+        Exit
+    }
 $ProjectDocuments = read-projectdocuments $ProjectIniFilePath
 $ProjectItems = New-ItemList $ProjectData $ProjectSites $ProjectDocuments
 $Confirm = Read-Host "Please check Project Documents and Confirm to create Folder Structure Y/N"
-if ($Confirm -ne "y") {Exit}
+if ($Confirm -ne "y")
+    {
+        Stop-Transcript
+        Exit
+    }
 $ProjectPath = new-foldersctrucure .\Folder_Structure.ini $ProjectData
 New-DocList $ProjectData $ProjectSites $ProjectItems $ProjectPath
 $Confirm = Read-Host "Please Confirm to copy documens from templates Y/N"
-if ($Confirm -ne "y") {Exit}
+if ($Confirm -ne "y")
+    {
+        Stop-Transcript
+        Exit
+    }
 Copy-Docs $ProjectData $ProjectSites $ProjectItems $ProjectPath
+$Confirm = Read-Host "Finished, press any button"
+
+Stop-Transcript 
