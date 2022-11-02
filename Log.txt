@@ -1,0 +1,188 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20221102114046
+Username: ANAZHI_LAP1\zhili
+RunAs User: ANAZHI_LAP1\zhili
+Configuration Name: 
+Machine: ANAZHI_LAP1 (Microsoft Windows NT 10.0.22000.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'C:\Users\zhili\Documents\Scripts\Project_ini_Script.ps1'
+Process ID: 23600
+PSVersion: 5.1.22000.832
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22000.832
+BuildVersion: 10.0.22000.832
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is log.txt
+Project data
+Project Name is Middle Earth VTS
+Project Code is JRR-MDD-147
+Project Number is 789
+Project Engineer is J. R. R. Tolkien
+Project Manager is Allen
+Project Company is One Ring
+Project Country is UK
+
+Project Sites
+Project Site 1 is Arnor
+Project Site 2 is Beleriand
+Project Site 3 is Cirith Ungol
+Project Site 4 is Dead Marshes
+Project Site 5 is Erebor
+Project Site 6 is Eriador
+Project Site 7 is Fangorn Forest
+Project Site 8 is Gladden Fields
+Project Site 9 is Gondor
+Project Site 10 is The Grey Havens
+Project Site 11 is Isengard
+Project Site 12 is Moria
+Project Site 13 is Lorian
+Project Site 14 is Minas Ithil
+Project Site 15 is Mirkwood
+Project Site 16 is Misty Mountains
+Project Site 17 is Mordor
+Project Site 18 is Mount Doom
+Project Site 19 is Numeron
+Project Site 20 is Rivendell
+Project Site 21 is Rohan
+Project Site 22 is Shire
+Number of Sites is 22
+
+S01-Arnor S02-Beleriand S03-Cirith Ungol S04-Dead Marshes S05-Erebor S06-Eriador S07-Fangorn Forest S08-Gladden Fields S09-Gondor S10-The Grey Havens S11-Isengard S12-Moria S13-Lorian S14-Minas Ithil S15-Mirkwood S16-Misty Mountains S17-Mordor S18-Mount Doom S19-Numeron S20-Rivendell S21-Rohan S22-Shire
+Number of Documents is 4
+Project Items
+
+789001-01
+Master Plan
+General
+Middle_Earth_VTS_Master_Plan_789001-01
+SYS_DOC\General\Middle_Earth_VTS_Master_Plan_789001-01.vsdx
+visio Master_Plan.vsdx
+Master_Plan.vsdx
+
+789002-01
+Dataflow Diagram
+General
+Middle_Earth_VTS_Dataflow_Diagram_789002-01
+SYS_DOC\General\Middle_Earth_VTS_Dataflow_Diagram_789002-01.vsdx
+visio Default.vsdx
+Default.vsdx
+
+789003-01
+Technical description
+General
+Middle_Earth_VTS_Technical_description_789003-01
+SYS_DOC\Technical_description\Middle_Earth_VTS_Technical_description_789003-01.docx
+word Technical_Description.docx
+Technical_Description.docx
+
+789004-01
+Power_consumption
+General
+Middle_Earth_VTS_Power_consumption_789004-01
+Project_Documentation\Power_consumption\Middle_Earth_VTS_Power_consumption_789004-01.xlsx
+excel Excel.xlsx
+Excel.xlsx
+
+Folder Structer:
+\Commercial
+\Commercial\Contract
+\Commercial\Delivery
+\Commercial\Delivery\Delivery_Schedule
+\Commercial\Delivery\IN
+\Commercial\Delivery\OUT
+\Commercial\Order
+\Commercial\Tender\IN
+\Commercial\Order\Out
+\Commercial\Plans_and_Programs
+\Commercial\Tender
+\Commercial\Order\In
+\Commercial\Tender\OUT
+\Commercial\Trip
+\Current_Configuration
+\Current_Configuration\Backup
+\Current_Configuration\Features
+\Current_Configuration\Licenses
+\Current_Configuration\Software_Distr
+\Current_Configuration\System_Documentation
+\Current_Configuration\System_Documentation\SYSTEM_DOCUMENTATION_Paper
+\Current_Configuration\System_Documentation\SYSTEM_DOCUMENTATION_Paper\1_VTS_Technical_Description
+\Current_Configuration\System_Documentation\SYSTEM_DOCUMENTATION_Paper\2_General_Schemes
+\Current_Configuration\System_Documentation\SYSTEM_DOCUMENTATION_Paper\3_Site-Name_Schemes
+\Current_Configuration\System_Documentation\SYSTEM_DOCUMENTATION_Paper\4_IP_Addressing
+\Current_Configuration\System_Documentation\SYSTEM_DOCUMENTATION_Paper\5_System_Configuration
+\Current_Configuration\System_Documentation\SYSTEM_DOCUMENTATION_Soft_copy
+\Current_Configuration\System_Documentation\SYSTEM_DOCUMENTATION_Soft_copy\1_VTS_TECHNICAL_DESCRIPTION
+\Current_Configuration\System_Documentation\SYSTEM_DOCUMENTATION_Soft_copy\2_SYSTEM_CONFIGURATION
+\Current_Configuration\System_Documentation\SYSTEM_DOCUMENTATION_Soft_copy\3_VTS_SCHEMES
+\Current_Configuration\System_Documentation\SYSTEM_DOCUMENTATION_Soft_copy\4_SOFTWARE_MANUALS
+\Current_Configuration\System_Documentation\SYSTEM_DOCUMENTATION_Soft_copy\5_HARDWARE_MANUALS
+\Equipment
+\Firm_Documents
+\Firm_Documents\Delpoyment_Firm_Documents
+\Firm_Documents\Delpoyment_Firm_Documents\Acceptance
+\Firm_Documents\Delpoyment_Firm_Documents\Licenses
+\Firm_Documents\Delpoyment_Firm_Documents\System_Documentation_CD
+\Firm_Documents\Opportunity_Firm_Documents
+\Firm_Documents\Opportunity_Firm_Documents\Contract
+\Firm_Documents\Opportunity_Firm_Documents\Proposal
+\Maintenance
+\Maintenance\Failure_Reports
+\Maintenance\Maintenance_contract
+\Maintenance\Support
+\Official
+\Photos
+\Project_Documentation
+\Project_Documentation\Acceptance
+\Project_Documentation\Acceptance\FAT
+\Project_Documentation\Acceptance\PAT
+\Project_Documentation\Acceptance\SAT
+\Project_Documentation\Action_list
+\Project_Documentation\Civil_Installation_works_specification
+\Project_Documentation\Coverage
+\Project_Documentation\FATDMA_Plan
+\Project_Documentation\IN_data
+\Project_Documentation\Paper_license
+\Project_Documentation\Power_consumption
+\Project_Documentation\Scope_of_supply
+\Project_Documentation\Split_of_Responsibility
+\Project_Documentation\Training
+\Software
+\SYS_DOC
+\SYS_DOC\Block_diagram
+\SYS_DOC\Block_diagram\OLD
+\SYS_DOC\Block_diagram\PDF
+\SYS_DOC\Cable_list
+\SYS_DOC\Cable_list\Old
+\SYS_DOC\Connection_Layouts
+\SYS_DOC\Connection_Layouts\Old
+\SYS_DOC\Details
+\SYS_DOC\Details\Old
+\SYS_DOC\General
+\SYS_DOC\General\OLD
+\SYS_DOC\General\PDF
+\SYS_DOC\Manuals
+\SYS_DOC\Manuals\HW_Manuals
+\SYS_DOC\Manuals\SW_Manuals
+\SYS_DOC\Site_Plan
+\SYS_DOC\Site_Plan\OLD
+\SYS_DOC\Site_Plan\PDF
+\SYS_DOC\System_Configuration
+\SYS_DOC\Technical_description
+\SYS_DOC\Technical_description\Old
+\SYS_DOC\Wiring_Diagram
+\SYS_DOC\Wiring_Diagram\Old
+\Temp
+List-Doc located in C:\Users\zhili\Documents\Scripts\UK_Middle_Earth_VTS\789-List-Doc
+
+Project_Documentation\Power_consumption\Middle_Earth_VTS_Power_consumption_789004-01.xlsx
+SYS_DOC\General\Middle_Earth_VTS_Master_Plan_789001-01.vsdx
+SYS_DOC\General\Middle_Earth_VTS_Dataflow_Diagram_789002-01.vsdx
+SYS_DOC\Technical_description\Middle_Earth_VTS_Technical_description_789003-01.docx
+**********************
+Windows PowerShell transcript end
+End time: 20221102114136
+**********************

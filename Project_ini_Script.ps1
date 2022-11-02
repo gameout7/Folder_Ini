@@ -1,4 +1,4 @@
-Start-Transcript -Path log.log -IncludeInvocationHeader
+Start-Transcript -Path log.txt -IncludeInvocationHeader
 
 ######    FUNCTIONS    #########################################
 function read-ProjectData
