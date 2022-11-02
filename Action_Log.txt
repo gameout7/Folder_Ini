@@ -12,4 +12,5 @@ TODO
 5. Add Continue to cycles
 6. Change all echo to write-host -DONE
 7. Script should take ItemType from Template type, not from separate value
-8. Add log file after Script is done.
+8. Add log file after Script is done. -DONE
+9. Add site number

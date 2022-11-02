@@ -78,7 +78,7 @@ function read-ProjectSites
                 }
         }
 #Debug info
-    Write-Host "Project sites" -BackgroundColor Green
+    Write-Host "Project Sites" -BackgroundColor Green
     for ($i = 0; $i -lt $projectSites.Length; $i++) {Write-Host "Project Site $($i + 1) is $($ProjectSites[$i])"} 
     Write-Host "Number of Sites is $($projectSites.Count)"
     Write-Host "`n"
@@ -438,6 +438,18 @@ function Copy-Docs {
         
 }
 
+function Add-Sitenumber {
+    param (
+        [array]$ProjectSites
+    )
+    $projectSitesNumbered = @()
+    for ($i = 1; $i -le $ProjectSites.Count; $i++) {
+        if  ($i -lt 10) {$projectSitesNumbered += "S0" + $i + "-" + $ProjectSites[$i - 1]}
+        else {$projectSitesNumbered += "S" + $i + "-" + $ProjectSites[$i -1]}
+    }
+    $projectSitesNumbered
+}
+
 #######   MAIN   ###########################################
 $ProjectIniFilePath = ".\Project_ini.ini"
 $ProjectData = read-projectdata $ProjectIniFilePath
@@ -448,6 +460,8 @@ if ($Confirm -ne "y")
         Exit
     }
 $ProjectSites = read-projectsites $ProjectIniFilePath
+$projectSitesNumbered = Add-Sitenumber $ProjectSites
+Write-Host $projectSitesNumbered
 $Confirm = Read-Host "Please check Project Sites and Confirm Y/N"
 if ($Confirm -ne "y")
     {
