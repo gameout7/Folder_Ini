@@ -1,16 +1,16 @@
 ﻿**********************
 Windows PowerShell transcript start
-Start time: 20221102114046
-Username: ANAZHI_LAP1\zhili
-RunAs User: ANAZHI_LAP1\zhili
+Start time: 20240130213954
+Username: vmarine\anazhi
+RunAs User: vmarine\anazhi
 Configuration Name: 
-Machine: ANAZHI_LAP1 (Microsoft Windows NT 10.0.22000.0)
-Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -Command if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; & 'C:\Users\zhili\Documents\Scripts\Project_ini_Script.ps1'
-Process ID: 23600
-PSVersion: 5.1.22000.832
+Machine: WSAMZN-98V4U9MJ (Microsoft Windows NT 10.0.17763.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 15580
+PSVersion: 5.1.17763.5328
 PSEdition: Desktop
-PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22000.832
-BuildVersion: 10.0.22000.832
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.5328
+BuildVersion: 10.0.17763.5328
 CLRVersion: 4.0.30319.42000
 WSManStackVersion: 3.0
 PSRemotingProtocolVersion: 2.3
@@ -18,74 +18,79 @@ SerializationVersion: 1.1.0.1
 **********************
 Transcript started, output file is log.txt
 Project data
-Project Name is Middle Earth VTS
-Project Code is JRR-MDD-147
-Project Number is 789
-Project Engineer is J. R. R. Tolkien
-Project Manager is Allen
-Project Company is One Ring
-Project Country is UK
+Project Name is KPA Mombasa port
+Project Code is STC-TME-C-00352
+Project Number is 881
+Project Engineer is Anatolii Zhilin
+Project Manager is Aleksandr Krivoshlykov
+Project Company is Wartsila
+Project Country is Kenia
 
 Project Sites
-Project Site 1 is Arnor
-Project Site 2 is Beleriand
-Project Site 3 is Cirith Ungol
-Project Site 4 is Dead Marshes
-Project Site 5 is Erebor
-Project Site 6 is Eriador
-Project Site 7 is Fangorn Forest
-Project Site 8 is Gladden Fields
-Project Site 9 is Gondor
-Project Site 10 is The Grey Havens
-Project Site 11 is Isengard
-Project Site 12 is Moria
-Project Site 13 is Lorian
-Project Site 14 is Minas Ithil
-Project Site 15 is Mirkwood
-Project Site 16 is Misty Mountains
-Project Site 17 is Mordor
-Project Site 18 is Mount Doom
-Project Site 19 is Numeron
-Project Site 20 is Rivendell
-Project Site 21 is Rohan
-Project Site 22 is Shire
-Number of Sites is 22
+Project Site 1 is Port Control Tower
+Project Site 2 is Ras Serani Signal Station
+Project Site 3 is KPA Building
+Number of Sites is 3
 
-S01-Arnor S02-Beleriand S03-Cirith Ungol S04-Dead Marshes S05-Erebor S06-Eriador S07-Fangorn Forest S08-Gladden Fields S09-Gondor S10-The Grey Havens S11-Isengard S12-Moria S13-Lorian S14-Minas Ithil S15-Mirkwood S16-Misty Mountains S17-Mordor S18-Mount Doom S19-Numeron S20-Rivendell S21-Rohan S22-Shire
-Number of Documents is 4
+S01-Port Control Tower S02-Ras Serani Signal Station S03-KPA Building
+Number of Documents is 7
 Project Items
 
-789001-01
+881001-01
 Master Plan
 General
-Middle_Earth_VTS_Master_Plan_789001-01
-SYS_DOC\General\Middle_Earth_VTS_Master_Plan_789001-01.vsdx
+KPA_Mombasa_port_Master_Plan_881001-01
+SYS_DOC\General\KPA_Mombasa_port_Master_Plan_881001-01.vsdx
 visio Master_Plan.vsdx
 Master_Plan.vsdx
 
-789002-01
+881002-01
 Dataflow Diagram
 General
-Middle_Earth_VTS_Dataflow_Diagram_789002-01
-SYS_DOC\General\Middle_Earth_VTS_Dataflow_Diagram_789002-01.vsdx
+KPA_Mombasa_port_Dataflow_Diagram_881002-01
+SYS_DOC\General\KPA_Mombasa_port_Dataflow_Diagram_881002-01.vsdx
 visio Default.vsdx
 Default.vsdx
 
-789003-01
+881003-01
+Block Diagram
+Port Control Tower
+Port_Control_Tower_Block_Diagram_881003-01
+SYS_DOC\Block_diagram\Port_Control_Tower_Block_Diagram_881003-01.vsdx
+visio Block_Diagram.vsdx
+Block_Diagram.vsdx
+
+881004-01
+Block Diagram
+Ras Serani Signal Station
+Ras_Serani_Signal_Station_Block_Diagram_881004-01
+SYS_DOC\Block_diagram\Ras_Serani_Signal_Station_Block_Diagram_881004-01.vsdx
+visio Block_Diagram.vsdx
+Block_Diagram.vsdx
+
+881005-01
+Block Diagram
+KPA Building
+KPA_Building_Block_Diagram_881005-01
+SYS_DOC\Block_diagram\KPA_Building_Block_Diagram_881005-01.vsdx
+visio Block_Diagram.vsdx
+Block_Diagram.vsdx
+
+881006-01
+Scope_of_supply
+General
+KPA_Mombasa_port_Scope_of_supply_881006-01
+Project_Documentation\Scope_of_supply\KPA_Mombasa_port_Scope_of_supply_881006-01.xlsx
+excel FORM-Project_Costing_Budget-EN_v3.xlsx
+FORM-Project_Costing_Budget-EN_v3.xlsx
+
+881007-01
 Technical description
 General
-Middle_Earth_VTS_Technical_description_789003-01
-SYS_DOC\Technical_description\Middle_Earth_VTS_Technical_description_789003-01.docx
+KPA_Mombasa_port_Technical_description_881007-01
+SYS_DOC\Technical_description\KPA_Mombasa_port_Technical_description_881007-01.docx
 word Technical_Description.docx
 Technical_Description.docx
-
-789004-01
-Power_consumption
-General
-Middle_Earth_VTS_Power_consumption_789004-01
-Project_Documentation\Power_consumption\Middle_Earth_VTS_Power_consumption_789004-01.xlsx
-excel Excel.xlsx
-Excel.xlsx
 
 Folder Structer:
 \Commercial
@@ -176,13 +181,16 @@ Folder Structer:
 \SYS_DOC\Wiring_Diagram
 \SYS_DOC\Wiring_Diagram\Old
 \Temp
-List-Doc located in C:\Users\zhili\Documents\Scripts\UK_Middle_Earth_VTS\789-List-Doc
+List-Doc located in D:\Users\anazhi\Documents\Coding\KPA\Folder_Ini\Kenia_KPA_Mombasa_port\881-List-Doc
 
-Project_Documentation\Power_consumption\Middle_Earth_VTS_Power_consumption_789004-01.xlsx
-SYS_DOC\General\Middle_Earth_VTS_Master_Plan_789001-01.vsdx
-SYS_DOC\General\Middle_Earth_VTS_Dataflow_Diagram_789002-01.vsdx
-SYS_DOC\Technical_description\Middle_Earth_VTS_Technical_description_789003-01.docx
+Project_Documentation\Scope_of_supply\KPA_Mombasa_port_Scope_of_supply_881006-01.xlsx
+SYS_DOC\Block_diagram\Ras_Serani_Signal_Station_Block_Diagram_881004-01.vsdx
+SYS_DOC\Block_diagram\KPA_Building_Block_Diagram_881005-01.vsdx
+SYS_DOC\General\KPA_Mombasa_port_Master_Plan_881001-01.vsdx
+SYS_DOC\General\KPA_Mombasa_port_Dataflow_Diagram_881002-01.vsdx
+SYS_DOC\Block_diagram\Port_Control_Tower_Block_Diagram_881003-01.vsdx
+SYS_DOC\Technical_description\KPA_Mombasa_port_Technical_description_881007-01.docx
 **********************
 Windows PowerShell transcript end
-End time: 20221102114136
+End time: 20240130214132
 **********************
